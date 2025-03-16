@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+</head>
+
+<body class="w-screen">
+    <div class="flex fixed w-screen bg-gray-200 justify-between items-center px-7 z-10">
+        <div class="w-1/4">
+            <img src="../public/photographic/logo.png" class="h-16">
+        </div>
+        <nav class="flex justify-center items-center gap-5 w-2/4 h-16">
+            <a class="cursor-pointer hover:border-b-2 h-6">Trending</a>
+            <a class="cursor-pointer hover:border-b-2 h-6">Men</a>
+            <a class="cursor-pointer hover:border-b-2 h-6">Women</a>
+            <a class="cursor-pointer hover:border-b-2 h-6">Sale</a>
+        </nav>
+        <div class="w-1/4 flex justify-end">
+            <div id="searchBox" class="flex bg-gray-300 px-3 py-1 rounded-4xl max-w-60 gap-2">
+                <img src="../public/photographic/search-unactive.svg" id="searchImg" alt="search" class="w-6">
+                <input type="text" placeholder="Search.." id="searchInput"
+                    class="text-xl w-3/4  outline-0 placeholder:text-gray-500">
+            </div>
+        </div>
+    </div>
+    <section class="flex justify-center items-center h-screen">
+        <div class="flex flex-col z-10">
+            <h1 class="text-7xl font-bold text-white mt-30 mb-7">
+                NEW STRIDEX COLLECTION
+            </h1>
+            <button class="bg-black text-white text-3xl">Deep dive</button>
+        </div>
+
+        <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
+            <source src="../public/photographic/product-animation.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <script>
+        const searchInput = document.getElementById('searchInput')
+
+        searchInput.addEventListener('focus', () => {
+            document.getElementById('searchImg').src = '../public/photographic/search-active.svg'
+            searchInput.classList.remove('placeholder:text-gray-500')
+            searchInput.classList.add('placeholder:text-black')
+        })
+
+        searchInput.addEventListener('blur', () => {
+            document.getElementById('searchImg').src = '../public/photographic/search-unactive.svg'
+            searchInput.classList.remove('placeholder:text-black')
+            searchInput.classList.add('placeholder:text-gray-500')
+        })
+    </script>
+</body>
+
+</html>
