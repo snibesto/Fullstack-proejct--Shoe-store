@@ -7,22 +7,55 @@
     <title>Login form</title>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="./public/css/output.css">
 </head>
 
-<body>
+<body class="flex justify-center">
     <form id="form">
-        <label for="nameInput">Name:</label>
-        <input type="text" id="nameInput" required>
-        <label for="emailInput">Email:</label>
-        <input type="email" id="emailInput" required>
-        <label for="passwordInput">Password:</label>
-        <input type="password" id="passwordInput" required>
+        <h1 class="text-3xl font-semibold mb-4">REGISTER FOR FREE</h1>
+        <h3 class="text-2xl font-semibold mb-2">Awesome perks for joining STRIDEX:</h3>
+        <ul class="mb-4">
+            <li class="flex items-center gap-2">
+                <img src="./public/photographic/bullet-point.svg" alt="bullet point" class="h-3">
+                <p class="text-xl">
+                    20% off your first purchase <span class="underline inline font-medium">online</span>.
+                </p>
+            </li>
+            <li class="flex items-center gap-2">
+                <img src="./public/photographic/bullet-point.svg" alt="bullet point" class="h-3">
+                <p class="text-xl">
+                    Personalized recommendations and custom discounts.
+                </p>
+            </li>
+            <li class="flex items-center gap-2">
+                <img src="./public/photographic/bullet-point.svg" alt="bullet point" class="h-3">
+                <p class="text-xl">
+                    Gifts on your birthday.
+                </p>
+            </li>
+        </ul>
+        <div class="flex flex-col">
+            <p class="text-3xl font-semibold">ENTER YOUR NAME TO SIGN UP:</p>
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" required class="outline-1 outline-gray-500 rounded-sm px-5 py-3">
+        </div>
+        <!-- <label for=" emailInput">Email:</label>
+            <input type="email" id="emailInput" required class="outline-1 outline-gray-950">
+            <label for="passwordInput">Password:</label>
+            <input type="password" id="passwordInput" required class="outline-1 outline-gray-950> -->
 
-        <button type="submit">Submit</button>
+        <button type="submit" class="flex gap-4 bg-slate-950 p-4 font-semibold text-xl mt-4 w-full cursor-pointer">
+            <p class="text-white">CONTINUE</p>
+            <img src="./public/photographic/right-arrow.svg" class="w-5">
+        </button>
+
+        <p id="errorMessage"></p>
     </form>
 
     <script>
         const form = document.getElementById('form')
+        const errorMessage = document.getElementById('errorMessage')
 
         form.addEventListener('submit', e => {
             e.preventDefault()
@@ -31,6 +64,15 @@
                 name: document.getElementById('nameInput').value,
                 email: document.getElementById('emailInput').value,
                 password: document.getElementById('passwordInput').value
+            }).then(response => {
+                console.log(response);
+
+                errorMessage.textContent = response.data
+                errorMessage.style.color = 'green'
+            }).catch(err => {
+
+                errorMessage.textContent = err.response.data
+                errorMessage.style.color = 'red'
             })
         })
     </script>
