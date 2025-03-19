@@ -54,7 +54,7 @@ app.post('/login', async (req, res) => {
         return res.status(409).send(`Email already in use!`);
     }
 
-    await new user({
+        await new user({
         name: name,
         email: email,
         password: password

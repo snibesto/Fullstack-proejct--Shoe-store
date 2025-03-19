@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="./public/css/output.css">
 </head>
 
-<body class="flex justify-center">
-    <form id="form">
-        <h1 class="text-3xl font-semibold mb-4">REGISTER FOR FREE</h1>
+<body class="flex flex-col items-center">
+    <section class="flex flex-col mx-5">
+        <h1 class="text-3xl font-semibold mb-6 mt-6">REGISTER FOR FREE</h1>
         <h3 class="text-2xl font-semibold mb-2">Awesome perks for joining STRIDEX:</h3>
-        <ul class="mb-4">
+        <ul class="mb-6">
             <li class="flex items-center gap-2">
                 <img src="./public/photographic/bullet-point.svg" alt="bullet point" class="h-3">
                 <p class="text-xl">
@@ -35,23 +35,35 @@
                 </p>
             </li>
         </ul>
-        <div class="flex flex-col">
+        <form id="form" class="flex flex-col">
             <p class="text-3xl font-semibold">ENTER YOUR NAME TO SIGN UP:</p>
             <label for="nameInput">Name:</label>
-            <input type="text" id="nameInput" required class="outline-1 outline-gray-500 rounded-sm px-5 py-3">
-        </div>
-        <!-- <label for=" emailInput">Email:</label>
-            <input type="email" id="emailInput" required class="outline-1 outline-gray-950">
-            <label for="passwordInput">Password:</label>
-            <input type="password" id="passwordInput" required class="outline-1 outline-gray-950> -->
-
-        <button type="submit" class="flex gap-4 bg-slate-950 p-4 font-semibold text-xl mt-4 w-full cursor-pointer">
-            <p class="text-white">CONTINUE</p>
-            <img src="./public/photographic/right-arrow.svg" class="w-5">
-        </button>
+            <input type="text" id="nameInput" required class="outline-1 outline-gray-500 text-gray-500 px-5 py-3">
+            <button type="submit" class="flex gap-4 bg-slate-950 p-4 font-semibold text-xl mt-4 w-full cursor-pointer">
+                <p class="text-white">CONTINUE</p>
+                <img src="./public/photographic/right-arrow.svg" class="w-5">
+            </button>
+        </form>
+        <form id="form" class="flex flex-col">
+            <p class="text-3xl font-semibold">ENTER YOUR EMAIL FINISH THE ACCOUNT CREATION:</p>
+            <label for="nameInput">Email:</label>
+            <input type="text" id="nameInput" required class="outline-1 outline-gray-500 text-gray-500 px-5 py-3">
+            <button type="submit" class="flex gap-4 bg-slate-950 p-4 font-semibold text-xl mt-4 w-full cursor-pointer">
+                <p class="text-white">CREATE ACCOUNT</p>
+                <img src="./public/photographic/right-arrow.svg" class="w-5">
+            </button>
+        </form>
+        <form id="form" class="flex flex-col">
+            <p class="text-3xl font-semibold">ACCEPT TERMS AND CONDITIONS:</p>
+            <input type="checkbox" id="termsInput" required class="w-5 h-5">
+            <button type="submit" class="flex gap-4 bg-slate-950 p-4 font-semibold text-xl mt-4 w-full cursor-pointer">
+                <p class="text-white">FINISH CREATION</p>
+                <img src="./public/photographic/right-arrow.svg" class="w-5">
+            </button>
+        </form>
 
         <p id="errorMessage"></p>
-    </form>
+    </section>
 
     <script>
         const form = document.getElementById('form')

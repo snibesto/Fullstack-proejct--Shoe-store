@@ -16,6 +16,7 @@
   "description": "",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.14",
+    "bcryptjs": "^3.0.2",
     "express": "^4.21.2",
     "mongoose": "^8.12.1"
   },
